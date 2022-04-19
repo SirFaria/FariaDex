@@ -8,7 +8,7 @@
 
 ## 🚧 Projeto ainda em desenvolvimento 🛠
 
-Uma pokedex inicialmente contendo os primeiros 151 Pokémon com suas informações detalhadas.\
+Uma pokedex inicialmente contendo os primeiros 151 Pokémon com suas informações detalhadas.
 
 ## 🚀 Techs
 
