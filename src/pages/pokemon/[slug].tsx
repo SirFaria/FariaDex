@@ -1,4 +1,4 @@
-import * as S from "./styles";
+import * as S from "../../styles/home/pokemon/styles";
 
 
 export default function Teste() {

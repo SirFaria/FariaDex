@@ -4,7 +4,7 @@ import { useState } from 'react';
 import useSWR from 'swr';
 import CardSection from '../Components/CardSection';
 import { TPokemon, TPokemonData } from '../contexts/types';
-import * as S from './styles';
+import * as S from '../styles/home/styles';
 
 
 
