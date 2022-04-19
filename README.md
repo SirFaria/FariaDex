@@ -4,7 +4,7 @@
     <img alt="FariaDex Homepage" title="FariaDex Homepage" src="./fariadex-homepage.png" width="700px"  />
 </h1>
 
-<h2 align="center">Live Demo: - </h2>
+<h2 align="center">Live Demo: https://faria-dex.vercel.app/ </h2>
 
 ## 🚧 Projeto ainda em desenvolvimento 🛠
 
