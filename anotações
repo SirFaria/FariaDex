@@ -1,0 +1,62 @@
+// Home ({pokemonApiResponse}: HomeProps) {
+// const { setPokemonList } = usePoke();
+// useEffect(() => {
+//   setPokemonList(pokemonApiResponse.results);
+// },[])
+
+
+
+// export const getStaticProps: GetStaticProps = async () => {
+//   const { data: pokemonApiResponse } = await api.get('pokemon?offset=0&limit=151');
+//   return {
+//     props: {
+//       pokemonApiResponse,
+//     }
+//   }
+// }
+
+
+
+// const [pokemonInfo, setPokemonInfo] = useState<TPokemonInfo>();
+// const [isLoading, setIsLoading] = useState(true);
+// useEffect(() => {
+//   const fetchPkmData = async() =>{
+//     const {data: pokeInfo } = await api.get(`https://pokeapi.co/api/v2/pokemon/${pkmName}/`);
+//     setPokemonInfo(pokeInfo);
+//     setIsLoading(false);
+//     console.log('fez fetch')
+//   }
+//   fetchPkmData();
+// }, [pkmName]);
+
+
+// POKECONTEXT
+
+// import { createContext, useContext, useEffect, useState } from "react";
+// import { api } from "../services/api";
+
+// import { TPokemon, PokeContextProviderProps, TPokeContext, TPokemonData } from "./types";
+
+// export const PokeContext = createContext({} as TPokeContext);
+
+
+// export function PokeContextProvider({ children }: PokeContextProviderProps) {
+//   const [pokemonList, setPokemonList] = useState<TPokemon[]>([]);
+//   const [searchValue, setSearchValue] = useState<string>('');
+
+//   useEffect(() => {
+//     const fetchPkmList = async() => {
+//       const { data: pokemonApiResponse}: TPokemonData = await api.get('pokemon?offset=0&limit=151');
+//         setPokemonList(pokemonApiResponse.results);
+//       }
+//     fetchPkmList();
+//   }, [])
+
+//   return (
+//     <PokeContext.Provider value={{pokemonList, setPokemonList, searchValue, setSearchValue}}> {children}</PokeContext.Provider>
+//   )
+// }
+
+// export const usePoke = () => {
+//   return useContext(PokeContext)
+// }
