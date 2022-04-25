@@ -6,13 +6,13 @@
 
 <h2 align="center">Live Demo: https://faria-dex.vercel.app/ </h2>
 
-## 🚧 Projeto ainda em desenvolvimento 🛠
+## 🚧 Project under construction 🛠
 
-Uma pokedex inicialmente contendo os primeiros 151 Pokémon com suas informações detalhadas.
+A pokedex initially containing the first 151 Pokémon with their detailed information.
 
 ## 🚀 Techs
 
-Este projeto foi construído com:
+This project was built with:
 
 - [React](https://reactjs.org)
 - [Next](https://nextjs.org/)
