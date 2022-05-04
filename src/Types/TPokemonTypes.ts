@@ -18,8 +18,8 @@ export type TPokemonTypes =
   | "steel"
   | "dark";
 
+export type TPokemonTypesArray = Array<TPokemonTypes>;
+
 export interface CardLiProp {
   typesArray: TPokemonTypesArray;
 }
-
-export type TPokemonTypesArray = Array<TPokemonTypes>;

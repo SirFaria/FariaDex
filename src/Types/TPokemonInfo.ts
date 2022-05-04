@@ -18,10 +18,12 @@ export type TPokemonInfo = {
       };
     };
   };
-  types: {
-    type: {
-      name: TPokemonTypes;
-    };
-  }[];
+  types: IPokemonType[];
   weight: number;
 };
+
+export interface IPokemonType {
+  type: {
+    name: TPokemonTypes;
+  };
+}
