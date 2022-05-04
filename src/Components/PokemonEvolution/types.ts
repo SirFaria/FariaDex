@@ -3,7 +3,7 @@ import { TPokemonTypes } from "~types/TPokemonTypes";
 
 export type TEvolutionCardsProps = {
   pkmName: string;
-  key: string;
+  key?: string;
   type: TPokemonTypes;
 };
 

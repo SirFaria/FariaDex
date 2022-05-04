@@ -3,9 +3,10 @@ import * as S from "./styles";
 import { TPokemonEvolutionProps } from "./types";
 
 function PokemonEvolution({ pkmEvos, type }: TPokemonEvolutionProps) {
+  const willBeSticky = pkmEvos.firstEvos.length > 1 ? false : true; // true e false invertidos para corresponder com o resto
   function renderEvoColumn1() {
     return (
-      <S.EvoColumn className="unevolved">
+      <S.EvoColumn isSticky>
         <EvolutionCard
           type={type}
           key={pkmEvos.unevolved.species.name}
@@ -15,43 +16,20 @@ function PokemonEvolution({ pkmEvos, type }: TPokemonEvolutionProps) {
     );
   }
 
-  function renderArrowColumn1() {
-    return (
-      <S.ArrowColumn className="arrow">
-        {pkmEvos.firstEvos.map((evolucao) => {
-          return <div key={evolucao.evo_name}>→</div>;
-        })}
-      </S.ArrowColumn>
-    );
-  }
-
   function renderEvoColumn2() {
     return (
-      <S.EvoColumn className="firstEvo">
+      <S.EvoColumn isSticky={willBeSticky}>
         {pkmEvos.firstEvos.map((evolucao) => {
           // Primeira evolução
           return (
-            <EvolutionCard
-              type={type}
-              key={evolucao.evo_name}
-              pkmName={evolucao.evo_name}
-            />
+            <S.ArrowAndCardContainer key={evolucao.evo_name}>
+              <div key={evolucao.evo_name}>→</div>
+              <EvolutionCard type={type} pkmName={evolucao.evo_name} />
+            </S.ArrowAndCardContainer>
           );
         })}
       </S.EvoColumn>
     );
-  }
-
-  function renderArrowColumn2() {
-    if (pkmEvos.secondEvos.length > 0) {
-      return (
-        <S.ArrowColumn>
-          {pkmEvos.secondEvos.map((evolucao) => {
-            return <div key={evolucao.evo_name}>→</div>;
-          })}
-        </S.ArrowColumn>
-      );
-    }
   }
 
   function renderEvoColumn3() {
@@ -60,11 +38,10 @@ function PokemonEvolution({ pkmEvos, type }: TPokemonEvolutionProps) {
         <S.EvoColumn>
           {pkmEvos.secondEvos.map((evolucao) => {
             return (
-              <EvolutionCard
-                type={type}
-                key={evolucao.evo_name}
-                pkmName={evolucao.evo_name}
-              />
+              <S.ArrowAndCardContainer key={evolucao.evo_name}>
+                <div key={evolucao.evo_name}>→</div>
+                <EvolutionCard type={type} pkmName={evolucao.evo_name} />
+              </S.ArrowAndCardContainer>
             );
           })}
         </S.EvoColumn>
@@ -76,9 +53,7 @@ function PokemonEvolution({ pkmEvos, type }: TPokemonEvolutionProps) {
     return (
       <S.EvolutionContainer>
         {renderEvoColumn1()}
-        {renderArrowColumn1()}
         {renderEvoColumn2()}
-        {renderArrowColumn2()}
         {renderEvoColumn3()}
       </S.EvolutionContainer>
     );

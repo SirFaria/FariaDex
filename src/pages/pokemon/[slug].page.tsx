@@ -95,7 +95,7 @@ export default function Teste() {
           </S.LeftContainer>
 
           <S.RightContainer>
-            <S.InfoBox className="evolutionLine" removePaddingBottom>
+            <S.InfoBox className="evolutionLine" noPaddingBottom noGap>
               <S.TitleBox type={firstType} left>
                 Evolution
               </S.TitleBox>

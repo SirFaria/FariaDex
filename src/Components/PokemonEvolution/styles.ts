@@ -6,20 +6,37 @@ import { TPokemonTypes } from "~types/TPokemonTypes";
 
 export const EvolutionContainer = styled.div`
   display: flex;
-  /* align-items: center; */
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-height: 344px;
+  overflow-y: auto;
 `;
 
-export const EvoColumn = styled.div`
+export const EvoColumn = styled.div<{ isSticky?: boolean }>`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
+  justify-content: flex-start;
+  padding-bottom: 1.5rem;
+  gap: 1.5rem;
+  ${(props) => {
+    if (props.isSticky) {
+      return "position: sticky; top: 0px";
+    }
+  }}
 `;
 
 export const ArrowColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+`;
+
+// Arrow + Evolution Card
+
+export const ArrowAndCardContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 `;
 
 // Evolution Card
@@ -29,6 +46,7 @@ export const CardContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 1.5rem;
+  margin-bottom: 1.5rem;
 `;
 
 export const ImageContainer = styled.div<{ type: TPokemonTypes }>`
