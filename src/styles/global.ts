@@ -7,9 +7,14 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  a{
+    text-decoration: none;
+  }
+
   body {
     font-size: 14px;
-    color: ${props => props.theme.colors.text};;
+    color: ${props => props.theme.colors.text};
+    background: ${props => props.theme.colors.background};
     font-family: 'Ubuntu', sans-serif;
   }
 `

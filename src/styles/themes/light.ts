@@ -5,11 +5,13 @@ export default {
   colors: {
     primary: '#cc494c',
     secondary: '#F7F7F7',
+    full: '#FFFFFF',
 
     primaryI: '#9E363E',
 
     background: '#F2F2F2',
     text: '#333333',
+    textSecondary: '#F7F7F7',
   },
 
   themeButton: {

@@ -1,5 +1,6 @@
 import 'styled-components';
-import { TPokemonTypes } from '../Components/CardSection/types';
+import { TPokemonTypes } from '../Types/TPokemonTypes';
+
 
 declare module 'styled-components' {
   export interface DefaultTheme {
@@ -8,11 +9,13 @@ declare module 'styled-components' {
     colors: {
       primary: string;
       secondary: string;
+      full: string;
 
       primaryI: string;
   
       background: string;
       text: string;
+      textSecondary: string;
     }
 
     themeButton: {

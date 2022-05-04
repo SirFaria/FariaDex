@@ -1,6 +1,7 @@
 import { darken, lighten, saturate } from "polished";
 import styled from "styled-components";
-import { CardLiProp, TPokemonTypes } from "./types";
+import { CardLiProp, TPokemonTypes } from "../../Types/TPokemonTypes";
+
 
 export const PokeCardContainer = styled.ul`
   padding-top: 4rem;

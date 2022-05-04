@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@arthurpolon/tilt.it": "^0.1.0",
     "axios": "^0.26.1",
     "next": "12.1.4",
     "polished": "^4.2.2",

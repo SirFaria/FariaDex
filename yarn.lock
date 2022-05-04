@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@arthurpolon/tilt.it@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@arthurpolon/tilt.it/-/tilt.it-0.1.0.tgz#4d43980a856e6a623a7cd1b4fd539937ff7d5312"
+  integrity sha512-cbV7XE5Yw0eQjnjUyCHmp+j5q34xgw8DxOWPzHrrnaNNEKzroFQRnbqBMCe3W2xMfWB5x1/R0ilHpSvFIgM1/Q==
+
 "@babel/code-frame@^7.16.7":
   version "7.16.7"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.16.7.tgz#44416b6bd7624b998f5b1af5d470856c40138789"

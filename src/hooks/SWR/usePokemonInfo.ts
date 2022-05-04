@@ -1,7 +1,6 @@
 import axios from "axios";
 import useSWR from "swr";
-import { TPokemonInfo } from "../../Components/CardSection/types";
-
+import { TPokemonInfo } from "../../Types/TPokemonInfo";
 
 
 const fetcher = (url: string) => axios.get(url).then(res => res.data)

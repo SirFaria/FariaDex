@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useSearch } from "../../contexts/searchContext";
 import PokeCard from "./PokeCard";
 import * as S from './styles';
@@ -17,7 +18,7 @@ function CardSection({pkmList}: TCardSectionProps) {
       <S.PokeCardContainer>
         {filteredPokemon.map((pkm) => {
           return (
-            <PokeCard key={pkm.url} pkmName={pkm.name}/>
+            <Link href={`/pokemon/${pkm.name}`} key={pkm.url}><a><PokeCard pkmName={pkm.name}/></a></Link>    
           )
         })}
       </S.PokeCardContainer>
