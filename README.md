@@ -17,4 +17,3 @@ This project was built with:
 - [React](https://reactjs.org)
 - [Next](https://nextjs.org/)
 - [Styled Components](https://styled-components.com/)
-

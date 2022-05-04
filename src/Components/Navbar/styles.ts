@@ -1,22 +1,20 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 import { darken } from "polished";
 
-
 export const NavbarContainer = styled.nav`
-background: ${props => props.theme.colors.primary};
-display: flex;
-align-items: center;
-width: 100%;
-top: 0;
-padding: 1rem 2rem;
+  background: ${(props) => props.theme.colors.primary};
+  display: flex;
+  align-items: center;
+  width: 100%;
+  top: 0;
+  padding: 1rem 2rem;
 
-z-index: 999;
-position: fixed;
+  z-index: 999;
+  position: fixed;
+`;
 
-`
-
-export const ThemeButton = styled.button `
-  background-color: ${props => props.theme.colors.primary};
+export const ThemeButton = styled.button`
+  background-color: ${(props) => props.theme.colors.primary};
 
   margin-left: 10%;
   margin-right: 1rem;
@@ -25,24 +23,24 @@ export const ThemeButton = styled.button `
   border: none;
   border-radius: 50%;
   font-size: 0;
-  
+
   transition: filter 0.2s;
 
   svg {
-    color: ${props => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.background};
     width: 2rem;
     height: 2rem;
   }
-  
+
   &:hover {
-    filter: brightness(0.90);
+    filter: brightness(0.9);
     cursor: pointer;
   }
-`
+`;
 
-export const SearchInput = styled.input `
-  color: ${props => props.theme.colors.text};
-  background: ${props => props.theme.colors.background};
+export const SearchInput = styled.input`
+  color: ${(props) => props.theme.colors.text};
+  background: ${(props) => props.theme.colors.background};
   border: none;
   border-radius: 15px;
   margin-left: auto;
@@ -50,6 +48,6 @@ export const SearchInput = styled.input `
 
   &:focus {
     outline: none;
-    background: ${props => darken(0.01, props.theme.colors.background)};
+    background: ${(props) => darken(0.01, props.theme.colors.background)};
   }
-`
+`;

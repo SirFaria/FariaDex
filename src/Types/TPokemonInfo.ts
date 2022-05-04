@@ -7,22 +7,21 @@ export type TPokemonInfo = {
     };
     is_hidden: boolean;
     slot: number;
-
   }[];
   height: number;
   id: number;
   name: string;
   sprites: {
     other: {
-      'official-artwork': {
+      "official-artwork": {
         front_default: string;
-      }
-    }
+      };
+    };
   };
   types: {
     type: {
-      name: TPokemonTypes
+      name: TPokemonTypes;
     };
   }[];
   weight: number;
-}
+};

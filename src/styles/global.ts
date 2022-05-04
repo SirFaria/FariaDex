@@ -13,8 +13,8 @@ export default createGlobalStyle`
 
   body {
     font-size: 14px;
-    color: ${props => props.theme.colors.text};
-    background: ${props => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.text};
+    background: ${(props) => props.theme.colors.background};
     font-family: 'Ubuntu', sans-serif;
   }
-`
+`;

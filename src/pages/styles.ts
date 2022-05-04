@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const HaikeiBackground = styled.div`
-  background-image: ${props => {
-    if(props.theme.title == 'dark'){
+  background-image: ${(props) => {
+    if (props.theme.title == "dark") {
       return `url('/haikei-background-dark.svg')`;
     }
-    return `url('/haikei-background-light.svg')`
+    return `url('/haikei-background-light.svg')`;
   }};
 
   background-repeat: no-repeat;
@@ -13,8 +13,8 @@ export const HaikeiBackground = styled.div`
   position: fixed;
   inset: 0;
   z-index: -999;
-`
+`;
 
 export const Homepage = styled.div`
   margin-top: 7rem;
-`
+`;
