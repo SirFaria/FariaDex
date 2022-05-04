@@ -1,8 +1,7 @@
-import 'styled-components';
-import { TPokemonTypes } from '../Types/TPokemonTypes';
+import "styled-components";
+import { TPokemonTypes } from "~types/TPokemonTypes";
 
-
-declare module 'styled-components' {
+declare module "styled-components" {
   export interface DefaultTheme {
     title: string;
 
@@ -12,15 +11,15 @@ declare module 'styled-components' {
       full: string;
 
       primaryI: string;
-  
+
       background: string;
       text: string;
       textSecondary: string;
-    }
+    };
 
     themeButton: {
-      hoverFilter: string; 
-    }
+      hoverFilter: string;
+    };
 
     typeColors: {
       [key in TPokemonTypes]: string; //tipando a chave do objeto, e o valor

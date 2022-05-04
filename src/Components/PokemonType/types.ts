@@ -1,6 +1,5 @@
-import { TPokemonInfo } from "../../Types/TPokemonInfo"
-
+import { TPokemonInfo } from "~types/TPokemonInfo";
 
 export type TPokemonTypeProps = {
-  types: TPokemonInfo['types'];
-}
+  types: TPokemonInfo["types"];
+};
