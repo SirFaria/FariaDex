@@ -8,7 +8,6 @@ import * as S from "../styles";
 import { TPokeCardProps } from "../types";
 import { PokeCardSkeleton, SkeletonDetails } from "./skeleton";
 import PokemonType from "../../PokemonType";
-import { IPokemonType } from "../../../types/TPokemonInfo";
 
 function PokeCard({ pkmName }: TPokeCardProps) {
   // está desestruturado, poderia ser apenas props e depois usar props.pkmName
@@ -30,9 +29,7 @@ function PokeCard({ pkmName }: TPokeCardProps) {
 
   const dexNumber = pokemonInfo.id.toString().padStart(3, "0"); // Formatar os IDs em Três digitos
 
-  const poke_types = pokemonInfo.types.map(
-    ({ type }: IPokemonType) => type.name
-  ); // DESESTRUTUREI A PROPRIEDADE TYPE DENTRO DO OBJETO TYPES
+  const poke_types = pokemonInfo.types.map(({ type }) => type.name); // DESESTRUTUREI A PROPRIEDADE TYPE DENTRO DO OBJETO TYPES
 
   return (
     <S.PokeCard typesArray={poke_types}>
