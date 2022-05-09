@@ -3,7 +3,7 @@ import * as S from "./styles";
 import { TPokemonEvolutionProps } from "./types";
 
 function PokemonEvolution({ pkmEvos, type }: TPokemonEvolutionProps) {
-  const willBeSticky = pkmEvos.firstEvos.length > 1 ? false : true; // true e false invertidos para corresponder com o resto
+  const willBeSticky = pkmEvos.firstEvos.length <= 1; // true e false invertidos para corresponder com o resto
   function renderEvoColumn1() {
     return (
       <S.EvoColumn isSticky>
