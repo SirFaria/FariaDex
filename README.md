@@ -14,6 +14,7 @@ A pokedex initially containing the first 151 Pokémon with their detailed inform
 
 This project was built with:
 
+- [TypeScript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org)
 - [Next](https://nextjs.org/)
 - [Styled Components](https://styled-components.com/)
