@@ -4,6 +4,7 @@ import { CardLiProp, TPokemonTypes } from "~types/TPokemonTypes";
 
 export const PokeCardContainer = styled.ul`
   padding-top: 4rem;
+  padding-inline: 9rem;
   list-style: none;
   display: flex;
   flex-wrap: wrap;

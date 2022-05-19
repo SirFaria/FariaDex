@@ -1,13 +1,20 @@
 import { createGlobalStyle } from "styled-components";
 
+export const navHeight = 5;
+
 export default createGlobalStyle`
-  *{
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
-  a{
+  a {
     text-decoration: none;
   }
 

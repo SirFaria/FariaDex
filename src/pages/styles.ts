@@ -1,3 +1,4 @@
+import { navHeight } from "src/styles/global";
 import styled from "styled-components";
 
 export const HaikeiBackground = styled.div`
@@ -16,5 +17,5 @@ export const HaikeiBackground = styled.div`
 `;
 
 export const Homepage = styled.div`
-  margin-top: 7rem;
+  padding-top: ${navHeight}rem;
 `;
