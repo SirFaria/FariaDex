@@ -11,7 +11,7 @@ import * as S from "./styles";
 import { isPokemonEvolutions } from "~types/TPokemonEvolution";
 import { HaikeiBackground } from "../styles";
 
-export default function Teste() {
+export default function PokemonPage() {
   const router = useRouter();
   const pkmName = router.query.slug;
   const { pokemonInfo } = usePokemonInfo(pkmName as string);
@@ -31,8 +31,6 @@ export default function Teste() {
   const dexNumber = pokemonInfo.id.toString().padStart(3, "0");
   const pkmHeight = (pokemonInfo.height * 0.1).toFixed(1);
   const pkmWeight = (pokemonInfo.weight * 0.1).toFixed(1);
-
-  console.log(pokemonEvolutions);
 
   function toTitleCase(str: string) {
     // função para fazer capitalize em todas as palavras inseridas
