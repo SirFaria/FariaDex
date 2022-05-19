@@ -37,5 +37,5 @@ export type TPokemonEvolutions = {
 export const isPokemonEvolutions = (
   pkmEvos: TPokemonEvolutions | any
 ): pkmEvos is TPokemonEvolutions => {
-  return pkmEvos.hasEvo;
+  return !!pkmEvos.unevolved;
 };
