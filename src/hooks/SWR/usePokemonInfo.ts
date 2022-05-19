@@ -6,7 +6,7 @@ const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
 export default function usePokemonInfo(pkmName: string) {
   const { data: pokemonInfo, error } = useSWR<TPokemonInfo>(
-    `https://pokeapi.co/api/v2/pokemon/${pkmName}/`,
+    pkmName ? `https://pokeapi.co/api/v2/pokemon/${pkmName}/` : null,
     fetcher
   );
   const isLoading = !pokemonInfo && !error;
