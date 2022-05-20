@@ -9,7 +9,7 @@ export const PokeCardWrapper = styled.div`
 `;
 
 export const PokeCardContainer = styled.ul`
-  padding-top: 5.5rem;
+  padding-block: 5.5rem 1.5rem;
 
   list-style: none;
 
