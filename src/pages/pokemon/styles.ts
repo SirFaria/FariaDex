@@ -1,12 +1,13 @@
 import { darken } from "polished";
+import { navHeight } from "src/styles/global";
 import styled from "styled-components";
 import { TPokemonTypes } from "~types/TPokemonTypes";
 
 // Main
 
 export const MainPanel = styled.div`
-  margin: 10rem auto;
-  padding: 3rem 2rem;
+  padding-inline: 9rem;
+  padding-top: ${navHeight}rem;
 `;
 
 export const PokemonDetailsContainer = styled.div`
@@ -15,6 +16,7 @@ export const PokemonDetailsContainer = styled.div`
   display: flex;
   flex-direction: row;
   padding: 3rem;
+  margin-inline: auto;
   gap: 10rem;
 `;
 // Cards

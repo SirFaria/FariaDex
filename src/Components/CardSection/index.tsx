@@ -12,7 +12,7 @@ function CardSection({ pkmList }: TCardSectionProps) {
   );
 
   return (
-    <section>
+    <S.PokeCardWrapper>
       <S.PokeCardContainer>
         {filteredPokemon.map((pkm) => {
           return (
@@ -24,7 +24,7 @@ function CardSection({ pkmList }: TCardSectionProps) {
           );
         })}
       </S.PokeCardContainer>
-    </section>
+    </S.PokeCardWrapper>
   );
 }
 

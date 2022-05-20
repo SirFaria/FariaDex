@@ -2,9 +2,14 @@ import { darken, lighten, saturate } from "polished";
 import styled from "styled-components";
 import { CardLiProp, TPokemonTypes } from "~types/TPokemonTypes";
 
+export const PokeCardWrapper = styled.div`
+  display: flex;
+  width: min(98rem, 100%);
+  margin-inline: auto;
+`;
+
 export const PokeCardContainer = styled.ul`
   padding-top: 4rem;
-  padding-inline: 9rem;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -57,6 +62,10 @@ export const CardDetails = styled.div`
   align-items: center;
   gap: 1rem;
   text-transform: capitalize;
+
+  h1 {
+    font-size: 1.5rem;
+  }
 `;
 
 export const DexNumber = styled.span`
