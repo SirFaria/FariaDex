@@ -14,8 +14,6 @@ export const HaikeiBackground = styled.div`
   position: fixed;
   inset: 0;
   z-index: -999;
-
-  transition: linear 200ms;
 `;
 
 export const Homepage = styled.div`
