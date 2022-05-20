@@ -8,9 +8,9 @@ export const HaikeiBackground = styled.div`
     }
     return `url('/haikei-background-light.svg')`;
   }};
-
   background-repeat: no-repeat;
   background-size: cover;
+
   position: fixed;
   inset: 0;
   z-index: -999;

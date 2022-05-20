@@ -29,10 +29,13 @@ export const ThemeButton = styled.button`
   background-color: ${(props) => props.theme.colors.primary};
 
   margin-left: 10%;
+
   width: 2.5rem;
   height: 2.5rem;
+
   border: none;
   border-radius: 50%;
+
   font-size: 0;
 
   transition: filter 0.2s;
@@ -52,9 +55,12 @@ export const ThemeButton = styled.button`
 export const SearchInput = styled.input`
   color: ${(props) => props.theme.colors.text};
   background: ${(props) => props.theme.colors.background};
+
+  margin-left: auto;
+
   border: none;
   border-radius: 15px;
-  margin-left: auto;
+
   padding: 0.5rem;
 
   &:focus {

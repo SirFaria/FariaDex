@@ -10,7 +10,9 @@ export const PokeCardWrapper = styled.div`
 
 export const PokeCardContainer = styled.ul`
   padding-top: 4rem;
+
   list-style: none;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -27,18 +29,22 @@ export const PokeCard = styled.li<CardLiProp>`
     return props.theme.typeColors[props.typesArray[0]];
   }};
 
+  padding: 1.25rem;
+
+  display: flex;
+  align-items: center;
+
+  border-radius: 20px;
+
+  position: relative;
+
+  cursor: pointer;
+
   text-shadow: ${(props) => {
     if (props.theme.title === "light") {
       return `1px 1px ${props.theme.colors.text};`;
     }
   }};
-
-  padding: 1.25rem;
-  position: relative;
-  display: flex;
-  align-items: center;
-  border-radius: 20px;
-  cursor: pointer;
 
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
@@ -56,11 +62,13 @@ export const ImageBackground = styled.div`
 
 export const CardDetails = styled.div`
   color: ${(props) => props.theme.colors.secondary};
+
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   gap: 1rem;
+
   text-transform: capitalize;
 
   h1 {
@@ -69,33 +77,39 @@ export const CardDetails = styled.div`
 `;
 
 export const DexNumber = styled.span`
-  text-align: center;
-  padding: 0.3rem 0.5rem;
-  border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.2);
+
+  padding: 0.3rem 0.5rem;
+
+  text-align: center;
+
+  border-radius: 20px;
 `;
 
 export const TypeContainer = styled.ul`
-  list-style: none;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   gap: 0.5rem;
+
+  list-style: none;
 `;
 
 export const TypeBox = styled.li<{ type: TPokemonTypes }>`
+  color: ${(props) => props.theme.colors.secondary};
+  background: ${(props) => darken(0.07, props.theme.typeColors[props.type])};
+
   text-align: center;
+
   padding: 0.2rem;
+
+  min-width: 3.6rem;
+
+  border-radius: 10px;
 
   text-shadow: ${(props) => {
     if (props.theme.title === "light") {
       return `1px 1px ${props.theme.colors.text};`;
     }
   }};
-
-  color: ${(props) => props.theme.colors.secondary};
-  background: ${(props) => darken(0.07, props.theme.typeColors[props.type])};
-  min-width: 3.6rem;
-  /* border: 1px solid #9e9e9e; */
-  border-radius: 10px;
 `;

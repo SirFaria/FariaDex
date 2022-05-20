@@ -14,5 +14,4 @@ export const AbilityBox = styled.div`
   font-size: 1rem;
   text-align: center;
   align-self: center;
-  /* text-transform: capitalize; */
 `;
