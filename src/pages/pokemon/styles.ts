@@ -7,7 +7,7 @@ import { TPokemonTypes } from "~types/TPokemonTypes";
 
 export const MainPanel = styled.div`
   padding-inline: 9rem;
-  padding-top: ${navHeight}rem;
+  padding-top: calc(5.5rem + ${navHeight}rem);
 `;
 
 export const PokemonDetailsContainer = styled.div`
