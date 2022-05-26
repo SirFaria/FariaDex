@@ -55,13 +55,13 @@ export const CardContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div<{ type: TPokemonTypes }>`
-  background: ${(props) => darken(0.07, props.theme.typeColors[props.type])};
+  background: ${(props) => props.theme.typeColors[props.type]};
   display: flex;
   border-radius: 50%;
 `;
 
 export const InfoContainer = styled.div<{ type: TPokemonTypes }>`
-  background: ${(props) => darken(0.07, props.theme.typeColors[props.type])};
+  background: ${(props) => props.theme.typeColors[props.type]};
   color: ${(props) => props.theme.colors.text};
 
   padding: 0.8rem;
