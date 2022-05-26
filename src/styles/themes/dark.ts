@@ -3,15 +3,17 @@ export default {
   title: "dark",
 
   colors: {
-    primary: "#9E363E",
+    primary: "#9B2C2C",
     secondary: "#333333",
     full: "#212121",
 
     primaryI: "#cc494c",
 
     background: "#292929",
-    text: "#F7F7F7",
-    textSecondary: "#333333",
+    text: "#EDF2F7",
+    textSecondary: "#1A202C",
+
+    navbarText: "rgba(255, 255, 255, 0.4)",
   },
 
   themeButton: {
@@ -19,23 +21,23 @@ export default {
   },
 
   typeColors: {
-    normal: "#BABABA",
-    fighting: "#FC9C7C",
-    flying: "#add5ff",
-    poison: "#ab92bf",
-    ground: "#DBAF74",
-    rock: "#C4C19B",
-    bug: "#B8BA72",
-    ghost: "#AA6CAD",
-    steel: "#B7B7C9",
-    fire: "#FC9090",
-    water: "#7EC0DE",
-    grass: "#78C27E",
-    electric: "#CFBC46",
-    psychic: "#FF99AC",
-    ice: "#A1CFCC",
-    dragon: "#818DE3",
-    dark: "#635858",
-    fairy: "#E3ACE3",
+    normal: "#737373",
+    fighting: "#C05621",
+    flying: "#2287CE",
+    poison: "#863EA4",
+    ground: "#C68422",
+    rock: "#DD993F",
+    bug: "#D0C21E",
+    ghost: "#6B3EA4",
+    steel: "#7494A4",
+    fire: "#E53E3E",
+    water: "#2264CE",
+    grass: "#268F2D",
+    electric: "#ECC94B",
+    psychic: "#F45982",
+    ice: "#0BC5EA",
+    dragon: "#4F3EA4",
+    dark: "#34434B",
+    fairy: "#F459A1",
   },
 };
