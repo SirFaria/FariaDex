@@ -4,7 +4,11 @@ import { CardLiProp, TPokemonTypes } from "~types/TPokemonTypes";
 
 export const PokeCardWrapper = styled.div`
   display: flex;
-  width: min(98rem, 100%);
+  justify-content: center;
+
+  /* width: min(98rem, 100%); */
+  width: min(81rem, 100%);
+
   margin-inline: auto;
 `;
 
@@ -40,12 +44,6 @@ export const PokeCard = styled.li<CardLiProp>`
 
   cursor: pointer;
 
-  text-shadow: ${(props) => {
-    if (props.theme.title === "light") {
-      return `1px 1px ${props.theme.colors.text};`;
-    }
-  }};
-
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -61,7 +59,7 @@ export const ImageBackground = styled.div`
 `;
 
 export const CardDetails = styled.div`
-  color: ${(props) => props.theme.colors.secondary};
+  color: ${(props) => props.theme.colors.text};
 
   display: flex;
   flex-direction: column;
@@ -71,8 +69,9 @@ export const CardDetails = styled.div`
 
   text-transform: capitalize;
 
-  h1 {
+  h3 {
     font-size: 1.5rem;
+    font-weight: 500;
   }
 `;
 
@@ -93,23 +92,4 @@ export const TypeContainer = styled.ul`
   gap: 0.5rem;
 
   list-style: none;
-`;
-
-export const TypeBox = styled.li<{ type: TPokemonTypes }>`
-  color: ${(props) => props.theme.colors.secondary};
-  background: ${(props) => darken(0.07, props.theme.typeColors[props.type])};
-
-  text-align: center;
-
-  padding: 0.2rem;
-
-  min-width: 3.6rem;
-
-  border-radius: 10px;
-
-  text-shadow: ${(props) => {
-    if (props.theme.title === "light") {
-      return `1px 1px ${props.theme.colors.text};`;
-    }
-  }};
 `;

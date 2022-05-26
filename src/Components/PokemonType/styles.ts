@@ -12,7 +12,7 @@ export const TypeContainer = styled.ul`
 `;
 
 export const TypeBox = styled.li<{ type: TPokemonTypes }>`
-  color: ${(props) => props.theme.colors.secondary};
+  color: ${(props) => props.theme.colors.text};
   background: ${(props) => darken(0.07, props.theme.typeColors[props.type])};
 
   padding: 0.2rem;
@@ -23,9 +23,4 @@ export const TypeBox = styled.li<{ type: TPokemonTypes }>`
 
   text-align: center;
   text-transform: capitalize;
-  text-shadow: ${(props) => {
-    if (props.theme.title === "light") {
-      return `1px 1px ${props.theme.colors.text};`;
-    }
-  }};
 `;
