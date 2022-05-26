@@ -4,10 +4,10 @@ export default {
 
   colors: {
     primary: "#FC8181",
-    secondary: "#F7F7F7",
-    full: "#FFFFFF",
-
     primaryI: "#9E363E",
+
+    secondary: "#EDF2F7",
+    secondaryLight: "#F7FAFC",
 
     background: "#F2F2F2",
     text: "#1A202C",
