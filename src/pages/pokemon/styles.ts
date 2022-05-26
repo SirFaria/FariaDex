@@ -1,32 +1,31 @@
 import { darken } from "polished";
-import { navHeight } from "src/styles/global";
+import { contentPadding, navHeight } from "src/styles/global";
 import styled from "styled-components";
 import { TPokemonTypes } from "~types/TPokemonTypes";
 
 // Main
 
 export const MainPanel = styled.div`
-  padding-inline: 9rem;
-  padding-top: calc(5.5rem + ${navHeight}rem);
+  padding-top: calc(${contentPadding}rem + ${navHeight}rem);
 `;
 
 export const PokemonDetailsContainer = styled.div`
   background: ${(props) => props.theme.colors.secondary};
 
-  margin-inline: auto;
   padding: 3rem;
 
   border-radius: 40px;
 
   display: flex;
   flex-direction: row;
-  gap: 10rem;
+  justify-content: flex-start;
+  gap: 3rem;
 `;
 
 // Cards
 
 export const TitleBox = styled.div<{ type: TPokemonTypes; left?: boolean }>`
-  background: ${(props) => darken(0.07, props.theme.typeColors[props.type])};
+  background: ${(props) => props.theme.typeColors[props.type]};
   color: ${(props) => props.theme.colors.text};
 
   border-radius: 10px 10px 0 0;
@@ -51,7 +50,7 @@ export const InfoBox = styled.div<{
   noPaddingBottom?: boolean;
   noGap?: boolean;
 }>`
-  background: ${(props) => props.theme.colors.full};
+  background: ${(props) => props.theme.colors.secondaryLight};
 
   padding-bottom: ${(props) => (props.noPaddingBottom ? "0" : "0.5rem")};
 
@@ -81,7 +80,7 @@ export const LeftContainer = styled.div`
 // Name info
 
 export const NameInfo = styled.div`
-  background: ${(props) => props.theme.colors.full};
+  background: ${(props) => props.theme.colors.secondaryLight};
 
   border-radius: 20px;
 
@@ -95,7 +94,7 @@ export const NameInfo = styled.div`
 `;
 
 export const ImageBox = styled.div<{ type: TPokemonTypes }>`
-  background: ${(props) => darken(0.07, props.theme.typeColors[props.type])};
+  background: ${(props) => props.theme.typeColors[props.type]};
 
   border-radius: 20px;
 
@@ -154,4 +153,5 @@ export const HeightWeightBox = styled.p`
 export const RightContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-left: 9rem;
 `;

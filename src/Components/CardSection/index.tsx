@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Wrapper } from "src/styles/global";
 import { useSearch } from "../../contexts/searchContext";
 import PokeCard from "./PokeCard";
 import * as S from "./styles";
@@ -12,7 +13,7 @@ function CardSection({ pkmList }: TCardSectionProps) {
   );
 
   return (
-    <S.PokeCardWrapper>
+    <Wrapper>
       <S.PokeCardContainer>
         {filteredPokemon.map((pkm) => {
           return (
@@ -24,7 +25,7 @@ function CardSection({ pkmList }: TCardSectionProps) {
           );
         })}
       </S.PokeCardContainer>
-    </S.PokeCardWrapper>
+    </Wrapper>
   );
 }
 

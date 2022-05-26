@@ -1,4 +1,5 @@
 import { darken, lighten, saturate } from "polished";
+import { contentPadding } from "src/styles/global";
 import styled from "styled-components";
 import { CardLiProp, TPokemonTypes } from "~types/TPokemonTypes";
 
@@ -13,7 +14,7 @@ export const PokeCardWrapper = styled.div`
 `;
 
 export const PokeCardContainer = styled.ul`
-  padding-block: 5.5rem 1.5rem;
+  padding-block: ${contentPadding}rem 1.5rem;
 
   list-style: none;
 

@@ -11,7 +11,7 @@ export const NavbarContainer = styled.nav`
   width: 100%;
   height: ${navHeight}rem;
 
-  padding: 1rem 2rem;
+  padding-block: 1rem;
 
   position: fixed;
   top: 0;
@@ -23,7 +23,7 @@ export const NavbarWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  width: min(100%, 98rem);
+  width: 100%;
 `;
 
 export const SearchAndThemeContainer = styled.div`

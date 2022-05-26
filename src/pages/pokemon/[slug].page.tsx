@@ -10,6 +10,7 @@ import usePokemonSpecies from "../../hooks/SWR/usePokemonSpecies";
 import * as S from "./styles";
 import { isPokemonEvolutions } from "~types/TPokemonEvolution";
 import { HaikeiBackground } from "../styles";
+import { Wrapper } from "src/styles/global";
 
 export default function PokemonPage() {
   const router = useRouter();
@@ -48,59 +49,65 @@ export default function PokemonPage() {
             {`#${dexNumber} ${toTitleCase(pokemonInfo.name)}`} | Faria Dex
           </title>
         </Head>
-        <S.PokemonDetailsContainer>
-          <S.LeftContainer>
-            <S.NameInfo>
-              <S.ImageBox type={firstType}>
-                <Image
-                  className="pokemon-image"
-                  src={
-                    pokemonInfo.sprites.other["official-artwork"].front_default
-                  }
-                  width={250}
-                  height={250}
-                  alt={pokemonInfo.name}
+        <Wrapper>
+          <S.PokemonDetailsContainer>
+            <S.LeftContainer>
+              <S.NameInfo>
+                <S.ImageBox type={firstType}>
+                  <Image
+                    className="pokemon-image"
+                    src={
+                      pokemonInfo.sprites.other["official-artwork"]
+                        .front_default
+                    }
+                    width={250}
+                    height={250}
+                    alt={pokemonInfo.name}
+                  />
+                </S.ImageBox>
+
+                <S.TextBox>
+                  <span>#{dexNumber}</span>
+                  <span>{pkmName}</span>
+                </S.TextBox>
+              </S.NameInfo>
+
+              <S.InfoBox className="types">
+                <S.TitleBox type={firstType}>Type</S.TitleBox>
+                <PokemonType types={pokemonInfo.types} />
+              </S.InfoBox>
+
+              <S.InfoBox className="abilities">
+                <S.TitleBox type={firstType}>Abilities</S.TitleBox>
+                <PokemonAbility pkmAbilities={pokemonInfo.abilities} />
+              </S.InfoBox>
+
+              <S.HeightWeightContainer>
+                <S.InfoBox className="height">
+                  <S.TitleBox type={firstType}>Height</S.TitleBox>
+                  <S.HeightWeightBox>{pkmHeight} m</S.HeightWeightBox>
+                </S.InfoBox>
+
+                <S.InfoBox className="weight">
+                  <S.TitleBox type={firstType}>Weight</S.TitleBox>
+                  <S.HeightWeightBox>{pkmWeight} kg</S.HeightWeightBox>
+                </S.InfoBox>
+              </S.HeightWeightContainer>
+            </S.LeftContainer>
+
+            <S.RightContainer>
+              <S.InfoBox className="evolutionLine" noPaddingBottom noGap>
+                <S.TitleBox type={firstType} left>
+                  Evolution
+                </S.TitleBox>
+                <PokemonEvolution
+                  pkmEvos={pokemonEvolutions}
+                  type={firstType}
                 />
-              </S.ImageBox>
-
-              <S.TextBox>
-                <span>#{dexNumber}</span>
-                <span>{pkmName}</span>
-              </S.TextBox>
-            </S.NameInfo>
-
-            <S.InfoBox className="types">
-              <S.TitleBox type={firstType}>Type</S.TitleBox>
-              <PokemonType types={pokemonInfo.types} />
-            </S.InfoBox>
-
-            <S.InfoBox className="abilities">
-              <S.TitleBox type={firstType}>Abilities</S.TitleBox>
-              <PokemonAbility pkmAbilities={pokemonInfo.abilities} />
-            </S.InfoBox>
-
-            <S.HeightWeightContainer>
-              <S.InfoBox className="height">
-                <S.TitleBox type={firstType}>Height</S.TitleBox>
-                <S.HeightWeightBox>{pkmHeight} m</S.HeightWeightBox>
               </S.InfoBox>
-
-              <S.InfoBox className="weight">
-                <S.TitleBox type={firstType}>Weight</S.TitleBox>
-                <S.HeightWeightBox>{pkmWeight} kg</S.HeightWeightBox>
-              </S.InfoBox>
-            </S.HeightWeightContainer>
-          </S.LeftContainer>
-
-          <S.RightContainer>
-            <S.InfoBox className="evolutionLine" noPaddingBottom noGap>
-              <S.TitleBox type={firstType} left>
-                Evolution
-              </S.TitleBox>
-              <PokemonEvolution pkmEvos={pokemonEvolutions} type={firstType} />
-            </S.InfoBox>
-          </S.RightContainer>
-        </S.PokemonDetailsContainer>
+            </S.RightContainer>
+          </S.PokemonDetailsContainer>
+        </Wrapper>
       </S.MainPanel>
     </>
   );

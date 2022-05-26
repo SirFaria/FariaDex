@@ -1,6 +1,7 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
-export const navHeight = 5;
+export const navHeight = 4.5;
+export const contentPadding = 6;
 
 export default createGlobalStyle`
 
@@ -26,4 +27,13 @@ export default createGlobalStyle`
     background: ${(props) => props.theme.colors.background};
     font-family: 'Ubuntu', sans-serif;
   }
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+
+  width: min(81rem, 100%);
+
+  margin-inline: auto;
 `;
