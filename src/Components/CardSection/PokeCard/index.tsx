@@ -36,7 +36,7 @@ function PokeCard({ pkmName }: TPokeCardProps) {
       <S.CardDetails>
         <S.DexNumber>#{dexNumber}</S.DexNumber>
 
-        <h1>{pokemonInfo.name}</h1>
+        <h3>{pokemonInfo.name}</h3>
 
         <S.ImageBackground>
           <Image
