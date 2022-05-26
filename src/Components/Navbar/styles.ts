@@ -3,7 +3,7 @@ import { darken } from "polished";
 import { navHeight } from "src/styles/global";
 
 export const NavbarContainer = styled.nav`
-  background: ${(props) => props.theme.colors.primary};
+  background: transparent;
 
   display: flex;
   justify-content: center;
@@ -21,29 +21,34 @@ export const NavbarContainer = styled.nav`
 export const NavbarWrapper = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   width: min(100%, 98rem);
+`;
+
+export const SearchAndThemeContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 `;
 
 export const ThemeButton = styled.button`
   background-color: ${(props) => props.theme.colors.primary};
 
-  margin-left: 10%;
-
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.375rem;
+  height: 2.375rem;
 
   border: none;
-  border-radius: 50%;
+  border-radius: 6px;
 
   font-size: 0;
 
   transition: filter 0.2s;
 
   svg {
-    color: ${(props) => props.theme.colors.background};
-    width: 2rem;
-    height: 2rem;
+    color: ${(props) => props.theme.colors.navbarText};
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   &:hover {
@@ -52,19 +57,43 @@ export const ThemeButton = styled.button`
   }
 `;
 
-export const SearchInput = styled.input`
-  color: ${(props) => props.theme.colors.text};
-  background: ${(props) => props.theme.colors.background};
+export const SearchContainer = styled.div`
+  background: ${(props) => props.theme.colors.primary};
 
-  margin-left: auto;
+  padding-left: 0.5rem;
+
+  border-radius: 6px;
+
+  height: 2.375rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  svg {
+    color: ${(props) => props.theme.colors.navbarText};
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+`;
+
+export const SearchInput = styled.input`
+  background: transparent;
+
+  height: 100%;
+
+  font-family: Ubuntu, sans-serif;
+  font-weight: 700;
 
   border: none;
-  border-radius: 15px;
-
-  padding: 0.5rem;
+  border-radius: 8px;
 
   &:focus {
     outline: none;
-    background: ${(props) => darken(0.01, props.theme.colors.background)};
+  }
+
+  &::placeholder {
+    color: ${(props) => props.theme.colors.navbarText};
+    letter-spacing: 0.5px;
   }
 `;

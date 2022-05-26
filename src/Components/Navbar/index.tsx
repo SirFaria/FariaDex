@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { MdOutlineDarkMode, MdOutlineWbSunny } from "react-icons/md";
+import { MdOutlineDarkMode, MdOutlineWbSunny, MdSearch } from "react-icons/md";
 import { navHeight } from "src/styles/global";
 import { useSearch } from "../../contexts/searchContext";
 import * as S from "./styles";
@@ -13,43 +13,38 @@ function Navbar({ toggleTheme, theme }: any) {
     setSearchValue(e.target.value);
   };
 
-  const imageHeight = navHeight * 16;
-
   return (
     <S.NavbarContainer>
       <S.NavbarWrapper>
         <Link href="/" passHref>
           <a>
             {theme.title === "light" ? (
-              <Image
-                width={200}
-                height={imageHeight}
-                src="/logo-light.svg"
-                alt=""
-              />
+              <Image width={283} height={55} src="/logo-light.svg" alt="" />
             ) : (
-              <Image
-                width={200}
-                height={imageHeight}
-                src="/logo-dark.svg"
-                alt=""
-              />
+              <Image width={283} height={55} src="/logo-dark.svg" alt="" />
             )}
           </a>
         </Link>
-        <S.SearchInput
-          type="text"
-          onChange={handleChange}
-          value={searchValue}
-          placeholder="Search any Pokémon"
-        ></S.SearchInput>
-        <S.ThemeButton type="button" onClick={toggleTheme}>
-          {theme.title === "light" ? (
-            <MdOutlineDarkMode />
-          ) : (
-            <MdOutlineWbSunny />
-          )}
-        </S.ThemeButton>
+        <S.SearchAndThemeContainer>
+          <S.SearchContainer>
+            <MdSearch />
+
+            <S.SearchInput
+              type="text"
+              onChange={handleChange}
+              value={searchValue}
+              placeholder="Search any Pokémon"
+            ></S.SearchInput>
+          </S.SearchContainer>
+
+          <S.ThemeButton type="button" onClick={toggleTheme}>
+            {theme.title === "light" ? (
+              <MdOutlineDarkMode />
+            ) : (
+              <MdOutlineWbSunny />
+            )}
+          </S.ThemeButton>
+        </S.SearchAndThemeContainer>
       </S.NavbarWrapper>
     </S.NavbarContainer>
   );
