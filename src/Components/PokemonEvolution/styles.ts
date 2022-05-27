@@ -20,13 +20,14 @@ export const EvoColumn = styled.div<{ isSticky?: boolean }>`
   flex-direction: column;
   justify-content: flex-start;
   gap: 1.5rem;
+
+  padding-bottom: 1.5rem;
+
   ${(props) => {
     if (props.isSticky) {
       return "position: sticky; top: 0px";
     }
   }}
-
-  padding-bottom: 1.5rem;
 `;
 
 export const ArrowColumn = styled.div`
@@ -78,9 +79,4 @@ export const InfoContainer = styled.div<{ type: TPokemonTypes }>`
 export const NameContainer = styled.div`
   font-size: 1.3rem;
   font-weight: 500;
-  text-shadow: ${(props) => {
-    if (props.theme.title === "dark") {
-      return `1px 1px ${props.theme.colors.textSecondary};`;
-    }
-  }};
 `;
