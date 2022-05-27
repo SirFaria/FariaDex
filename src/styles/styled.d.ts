@@ -17,6 +17,7 @@ declare module "styled-components" {
       textSecondary: string;
 
       navbarText: string;
+      navbarBackground: string;
     };
 
     themeButton: {

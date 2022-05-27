@@ -14,6 +14,7 @@ export default {
     textSecondary: "#1A202C",
 
     navbarText: "rgba(255, 255, 255, 0.4)",
+    navbarBackground: "#e2e8f0af",
   },
 
   themeButton: {

@@ -3,7 +3,8 @@ import { darken } from "polished";
 import { navHeight } from "src/styles/global";
 
 export const NavbarContainer = styled.nav`
-  background: transparent;
+  background: ${(props) => props.theme.colors.navbarBackground};
+  backdrop-filter: blur(5px);
 
   display: flex;
   justify-content: center;
