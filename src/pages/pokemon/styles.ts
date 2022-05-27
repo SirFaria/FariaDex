@@ -12,6 +12,8 @@ export const MainPanel = styled.div`
 export const PokemonDetailsContainer = styled.div`
   background: ${(props) => props.theme.colors.secondary};
 
+  width: 100%;
+
   padding: 3rem;
 
   border-radius: 40px;
@@ -39,17 +41,13 @@ export const TitleBox = styled.div<{ type: TPokemonTypes; left?: boolean }>`
   width: 100%;
 
   text-align: ${(props) => (props.left ? "left" : "center")};
-  text-shadow: ${(props) => {
-    if (props.theme.title === "dark") {
-      return `1px 1px ${props.theme.colors.textSecondary};`;
-    }
-  }};
 `;
 
 export const InfoBox = styled.div<{
   noPaddingBottom?: boolean;
   noGap?: boolean;
 }>`
+  color: ${(props) => props.theme.colors.textSecondary};
   background: ${(props) => props.theme.colors.secondaryLight};
 
   padding-bottom: ${(props) => (props.noPaddingBottom ? "0" : "0.5rem")};
@@ -80,6 +78,7 @@ export const LeftContainer = styled.div`
 // Name info
 
 export const NameInfo = styled.div`
+  color: ${(props) => props.theme.colors.textSecondary};
   background: ${(props) => props.theme.colors.secondaryLight};
 
   border-radius: 20px;

@@ -78,6 +78,11 @@ export const CardDetails = styled.div`
 
 export const DexNumber = styled.span`
   background-color: rgba(0, 0, 0, 0.2);
+  ${(props) => {
+    if (props.theme.title == "dark") {
+      return "background-color: rgba(255, 255, 255, 0.2);";
+    }
+  }}
 
   padding: 0.3rem 0.5rem;
 
