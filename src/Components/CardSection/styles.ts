@@ -13,15 +13,11 @@ export const PokeCardWrapper = styled.div`
   margin-inline: auto;
 `;
 
-export const PokeCardContainer = styled.ul`
+export const PokeCardContainer = styled.div`
   padding-block: ${contentPadding}rem 1.5rem;
 
-  list-style: none;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
+  width: 100%;
+  height: 100%;
 `;
 
 export const PokeCard = styled.li<CardLiProp>`
@@ -33,6 +29,8 @@ export const PokeCard = styled.li<CardLiProp>`
     }
     return props.theme.typeColors[props.typesArray[0]];
   }};
+
+  max-width: 240px;
 
   padding: 1.25rem;
 

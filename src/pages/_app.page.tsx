@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import Navbar from "../Components/Navbar";
 import CardSection from "../Components/CardSection";
+import "react-virtualized/styles.css";
 
 import { ThemeProvider } from "styled-components";
 import light from "../styles/themes/light";

@@ -8,6 +8,7 @@ import * as S from "../styles";
 import { TPokeCardProps } from "../types";
 import { PokeCardSkeleton, SkeletonDetails } from "./skeleton";
 import PokemonType from "../../PokemonType";
+import { AnimatePresence } from "framer-motion";
 
 function PokeCard({ pkmName }: TPokeCardProps) {
   // está desestruturado, poderia ser apenas props e depois usar props.pkmName
