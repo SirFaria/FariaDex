@@ -11,6 +11,7 @@ import * as S from "./styles";
 import { isPokemonEvolutions } from "~types/TPokemonEvolution";
 import { HaikeiBackground } from "../styles";
 import { Wrapper } from "src/styles/global";
+import PokedexInfo from "src/Components/PokedexInfo";
 
 export default function PokemonPage() {
   const router = useRouter();
@@ -19,11 +20,13 @@ export default function PokemonPage() {
   const { pokemonSpecies } = usePokemonSpecies(pkmName as string);
 
   const evolutionUrl = pokemonSpecies?.evolution_chain.url;
+  const pokedexInfo = pokemonSpecies?.flavor_text_entries;
 
   const { pokemonEvolutions } = usePokemonEvolution(evolutionUrl as string);
   const isPokemonEvolution = isPokemonEvolutions(pokemonEvolutions);
 
-  const isLoading = !pokemonInfo || !pokemonSpecies || !isPokemonEvolution;
+  const isLoading =
+    !pokemonInfo || !pokemonSpecies || !isPokemonEvolution || !pokedexInfo;
   if (isLoading) {
     return null;
   }
@@ -96,7 +99,19 @@ export default function PokemonPage() {
             </S.LeftContainer>
 
             <S.RightContainer>
-              <S.InfoBox className="evolutionLine" noPaddingBottom noGap>
+              <S.InfoBox className="pokedexInfo" left>
+                <S.TitleBox type={firstType} left>
+                  Pokedex Info
+                </S.TitleBox>
+                <PokedexInfo pokedexInfo={pokedexInfo} />
+              </S.InfoBox>
+
+              <S.InfoBox
+                className="evolutionLine"
+                noPaddingBottom
+                noGap
+                stretch
+              >
                 <S.TitleBox type={firstType} left>
                   Evolution
                 </S.TitleBox>
