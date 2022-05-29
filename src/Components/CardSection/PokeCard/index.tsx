@@ -2,6 +2,7 @@ import Image from "next/image";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import usePokemonInfo from "../../../hooks/SWR/usePokemonInfo";
+import { memo } from "react";
 
 import * as S from "../styles";
 
@@ -54,4 +55,4 @@ function PokeCard({ pkmName }: TPokeCardProps) {
   );
 }
 
-export default PokeCard;
+export default memo(PokeCard);

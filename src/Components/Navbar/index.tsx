@@ -1,5 +1,7 @@
+import { useDebouncedValue } from "@mantine/hooks";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 import { MdOutlineDarkMode, MdOutlineWbSunny, MdSearch } from "react-icons/md";
 import { Wrapper } from "src/styles/global";
@@ -7,11 +9,14 @@ import { useSearch } from "../../contexts/searchContext";
 import * as S from "./styles";
 
 function Navbar({ toggleTheme, theme }: any) {
-  const { setSearchValue, searchValue } = useSearch();
+  const { setSearchValue } = useSearch();
 
-  const handleChange = (e: any) => {
-    setSearchValue(e.target.value);
-  };
+  const [value, setValue] = useState("");
+  const [debounce] = useDebouncedValue(value, 400);
+
+  useEffect(() => {
+    setSearchValue(debounce);
+  }, [debounce]);
 
   return (
     <S.NavbarContainer>
@@ -32,8 +37,8 @@ function Navbar({ toggleTheme, theme }: any) {
 
               <S.SearchInput
                 type="text"
-                onChange={handleChange}
-                value={searchValue}
+                onChange={(e) => setValue(e.target.value)}
+                value={value}
                 placeholder="Search any Pokémon"
               ></S.SearchInput>
             </S.SearchContainer>
