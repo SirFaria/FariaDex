@@ -5,6 +5,7 @@ import useSWR from "swr";
 import CardSection from "../Components/CardSection";
 import * as S from "./styles";
 import { TPokemonData } from "~types/TPokemon";
+import { BackToTopButton } from "src/Components/BackToTopButton";
 
 const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
@@ -23,6 +24,7 @@ export default function Home() {
       <Head>
         <title>Faria Dex</title>
       </Head>
+      <BackToTopButton />
       <S.HaikeiBackground />
       <CardSection pkmList={pokemonApiResponse.results} />
     </S.Homepage>
