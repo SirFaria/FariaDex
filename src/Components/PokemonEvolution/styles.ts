@@ -6,6 +6,7 @@ import { TPokemonTypes } from "~types/TPokemonTypes";
 
 export const EvolutionContainer = styled.div`
   display: flex;
+  justify-content: center;
   gap: 1.5rem;
 
   padding: 1.5rem;

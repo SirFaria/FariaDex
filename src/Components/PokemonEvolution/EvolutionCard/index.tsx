@@ -7,14 +7,16 @@ import { TEvolutionCardsProps } from "../types";
 function EvolutionCard({ pkmName, type }: TEvolutionCardsProps) {
   const { pokemonInfo } = usePokemonInfo(pkmName);
 
-  const isLoading = !pokemonInfo;
+  const pokemonType = pokemonInfo?.types[0].type.name;
+
+  const isLoading = !pokemonInfo || !pokemonType;
   if (isLoading) {
     return null;
   }
 
   return (
     <S.CardContainer>
-      <S.ImageContainer type={type}>
+      <S.ImageContainer type={pokemonType}>
         <Image
           className="pokemon-image"
           src={pokemonInfo.sprites.other["official-artwork"].front_default}
@@ -24,7 +26,7 @@ function EvolutionCard({ pkmName, type }: TEvolutionCardsProps) {
         />
       </S.ImageContainer>
 
-      <S.InfoContainer type={type}>
+      <S.InfoContainer type={pokemonType}>
         <S.NameContainer>{pokemonInfo.name}</S.NameContainer>
         <PokemonType types={pokemonInfo.types} />
       </S.InfoContainer>

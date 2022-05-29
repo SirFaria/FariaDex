@@ -46,6 +46,8 @@ export const TitleBox = styled.div<{ type: TPokemonTypes; left?: boolean }>`
 export const InfoBox = styled.div<{
   noPaddingBottom?: boolean;
   noGap?: boolean;
+  left?: boolean;
+  stretch?: boolean;
 }>`
   color: ${(props) => props.theme.colors.textSecondary};
   background: ${(props) => props.theme.colors.secondaryLight};
@@ -55,7 +57,8 @@ export const InfoBox = styled.div<{
   width: -webkit-fill-available;
 
   display: flex;
-  align-items: center;
+  align-items: ${(props) =>
+    props.left ? "flex-start" : props.stretch ? "stretch" : "center"};
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
@@ -151,6 +154,8 @@ export const HeightWeightBox = styled.p`
 
 export const RightContainer = styled.div`
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
+
   margin-left: 9rem;
 `;
