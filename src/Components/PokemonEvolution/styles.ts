@@ -11,30 +11,62 @@ export const EvolutionContainer = styled.div`
 
   padding: 1.5rem;
 
-  max-height: 344px;
+  max-height: 21.625rem;
 
   overflow-y: auto;
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    max-height: fit-content;
+    max-width: 100%;
+    overflow: auto;
+  }
+
+  @media (max-width: 375px) {
+  }
 `;
 
-export const EvoColumn = styled.div<{ isSticky?: boolean }>`
+export const EvoColumn = styled.div<{
+  isSticky?: boolean;
+  hasPaddingTop?: boolean;
+}>`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 1.5rem;
 
-  padding-bottom: 1.5rem;
+  position: ${(props) => (props.isSticky ? "sticky" : "unset")};
+  top: ${(props) => (props.isSticky ? "0px" : "unset")};
 
-  ${(props) => {
-    if (props.isSticky) {
-      return "position: sticky; top: 0px";
+  @media (max-width: 1024px) {
+    justify-content: ${(props) => (props.isSticky ? "flex-end" : "flex-start")};
+    padding-top: ${(props) =>
+      !props.isSticky && props.hasPaddingTop ? "1.2rem" : "unset"};
+  }
+
+  @media (max-width: 768px) {
+    justify-content: ${(props) => (props.isSticky ? "center" : "unset")};
+    padding-top: ${(props) =>
+      !props.isSticky && props.hasPaddingTop ? "0.8rem" : "unset"};
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: ${(props) => (props.isSticky ? "unset" : "row")};
+    position: ${(props) => (props.isSticky ? "sticky" : "unset")};
+    left: ${(props) => (props.isSticky ? "0px" : "unset")};
+    justify-content: center;
+  }
+
+  @media (max-width: 375px) {
+    justify-content: flex-start;
+    .arrow {
+      margin-right: ${(props) => (props.isSticky ? "unset" : "1.5rem")};
     }
-  }}
-`;
-
-export const ArrowColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  }
 `;
 
 // Arrow + Evolution Card
@@ -43,17 +75,42 @@ export const ArrowAndCardContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    gap: 0;
+  }
+
+  @media (max-width: 600px) {
+    .arrow {
+      transform: rotate(90deg);
+    }
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 375px) {
+  }
 `;
 
 // Evolution Card
 
-export const CardContainer = styled.div`
+export const CardContainer = styled.div<{ hasMarginBottom?: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1.5rem;
 
-  margin-bottom: 1.5rem;
+  ${(props) => (props.hasMarginBottom ? "margin-bottom: 1.5rem;" : "")}
+
+  @media (max-width: 375px) {
+    ${(props) => (props.hasMarginBottom ? "margin-right: 1.5rem;" : "")}
+    margin-bottom: 0px;
+    width: 11rem;
+  }
+
+  @media (max-width: 320px) {
+    width: 8rem;
+  }
 `;
 
 export const ImageContainer = styled.div<{ type: TPokemonTypes }>`
@@ -62,7 +119,10 @@ export const ImageContainer = styled.div<{ type: TPokemonTypes }>`
   border-radius: 50%;
 `;
 
-export const InfoContainer = styled.div<{ type: TPokemonTypes }>`
+export const InfoContainer = styled.div<{
+  type: TPokemonTypes;
+  secondEvo?: boolean;
+}>`
   background: ${(props) => props.theme.typeColors[props.type]};
   color: ${(props) => props.theme.colors.text};
 
@@ -75,6 +135,15 @@ export const InfoContainer = styled.div<{ type: TPokemonTypes }>`
   text-transform: capitalize;
 
   border-radius: 10px;
+
+  @media (max-width: 768px) {
+    gap: 0.5rem;
+    min-height: ${(props) => (props.secondEvo ? "7.125rem" : "unset")};
+    justify-content: center;
+    ul {
+      flex-direction: column;
+    }
+  }
 `;
 
 export const NameContainer = styled.div`

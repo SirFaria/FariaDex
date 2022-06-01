@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 export const navHeight = 4.5;
-export const contentPadding = 6;
+export const contentPadding = 5;
 
 export default createGlobalStyle`
 
@@ -22,10 +22,12 @@ export default createGlobalStyle`
   }
 
   body {
-    font-size: 14px;
+    font-size: 1rem;
     color: ${(props) => props.theme.colors.text};
     background: ${(props) => props.theme.colors.background};
     font-family: 'Ubuntu', sans-serif;
+    -webkit-font-smoothing: antialiased !important;
+    font-weight: 300;
   }
 `;
 
@@ -36,4 +38,20 @@ export const Wrapper = styled.div`
   width: min(81rem, 100%);
 
   margin-inline: auto;
+
+  @media (max-width: 1024px) {
+    width: min(50rem, 100%);
+  }
+
+  @media (max-width: 768px) {
+    width: min(40rem, 100%);
+  }
+
+  @media (max-width: 375px) {
+    width: min(20rem, 100%);
+  }
+
+  @media (max-width: 320px) {
+    width: min(17rem, 100%);
+  }
 `;

@@ -22,6 +22,16 @@ export const PokeCardContainer = styled.ul`
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
+
+  @media (max-width: 375px) {
+    flex-direction: column;
+    padding-block: 3rem 1.5rem;
+    width: 100%;
+  }
+
+  @media (max-width: 320px) {
+    padding-block: 2rem 1.5rem;
+  }
 `;
 
 export const PokeCard = styled.li<CardLiProp>`
@@ -53,10 +63,25 @@ export const PokeCard = styled.li<CardLiProp>`
     transform: scale(1.02) translateY(-5px);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   }
+
+  @media (max-width: 375px) {
+    justify-content: center;
+    padding: 1.25rem 0;
+  }
 `;
 export const ImageBackground = styled.div`
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
+
+  @media (max-width: 375px) {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  @media (max-width: 320px) {
+    width: 4rem;
+    height: 4rem;
+  }
 `;
 
 export const CardDetails = styled.div`
@@ -74,6 +99,29 @@ export const CardDetails = styled.div`
     font-size: 1.5rem;
     font-weight: 500;
   }
+
+  @media (max-width: 375px) {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-evenly;
+
+    width: 100%;
+
+    ul {
+      flex-direction: column;
+    }
+  }
+`;
+
+export const InfoAndNameWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media (max-width: 375px) {
+    gap: 0.5rem;
+  }
 `;
 
 export const DexNumber = styled.span`
@@ -83,6 +131,8 @@ export const DexNumber = styled.span`
       return "background-color: rgba(255, 255, 255, 0.2);";
     }
   }}
+
+  width: fit-content;
 
   padding: 0.3rem 0.5rem;
 

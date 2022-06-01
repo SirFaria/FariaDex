@@ -13,8 +13,6 @@ export default function PokedexInfo({ pokedexInfo }: TPokedexInfoProps) {
     .replace(/\u000c/g, " ")
     .split(". ");
 
-  console.log(pokemonInfoText.toLowerCase());
-
   return (
     <>
       {pokemonInfoText2.map((string, idx) => {

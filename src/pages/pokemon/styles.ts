@@ -7,6 +7,11 @@ import { TPokemonTypes } from "~types/TPokemonTypes";
 
 export const MainPanel = styled.div`
   padding-top: calc(${contentPadding}rem + ${navHeight}rem);
+  padding-bottom: 1.5rem;
+
+  @media (max-width: 1024px) {
+    padding-top: calc(3rem + ${navHeight}rem);
+  }
 `;
 
 export const PokemonDetailsContainer = styled.div`
@@ -22,6 +27,11 @@ export const PokemonDetailsContainer = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   gap: 3rem;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
 `;
 
 // Cards
@@ -157,5 +167,10 @@ export const RightContainer = styled.div`
   justify-content: space-between;
   flex-direction: column;
 
-  margin-left: 9rem;
+  margin-left: auto;
+
+  @media (max-width: 1024px) {
+    gap: 2rem;
+    margin-left: 0;
+  }
 `;

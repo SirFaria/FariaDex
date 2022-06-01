@@ -35,9 +35,11 @@ function PokeCard({ pkmName }: TPokeCardProps) {
   return (
     <S.PokeCard typesArray={poke_types}>
       <S.CardDetails>
-        <S.DexNumber>#{dexNumber}</S.DexNumber>
+        <S.InfoAndNameWrapper>
+          <S.DexNumber>#{dexNumber}</S.DexNumber>
 
-        <h3>{pokemonInfo.name}</h3>
+          <h3>{pokemonInfo.name}</h3>
+        </S.InfoAndNameWrapper>
 
         <S.ImageBackground>
           <Image

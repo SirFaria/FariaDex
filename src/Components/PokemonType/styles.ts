@@ -16,11 +16,13 @@ export const TypeBox = styled.li<{ type: TPokemonTypes }>`
   background: ${(props) => darken(0.07, props.theme.typeColors[props.type])};
 
   padding: 0.2rem;
+  padding-inline: 0.3rem;
 
   min-width: 3.6rem;
 
   border-radius: 10px;
 
+  font-size: 0.875rem;
   text-align: center;
   text-transform: capitalize;
 `;

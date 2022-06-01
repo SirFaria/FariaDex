@@ -4,7 +4,11 @@ import PokemonType from "../../PokemonType";
 import * as S from "../styles";
 import { TEvolutionCardsProps } from "../types";
 
-function EvolutionCard({ pkmName, type }: TEvolutionCardsProps) {
+function EvolutionCard({
+  pkmName,
+  hasMarginBottom,
+  secondEvo,
+}: TEvolutionCardsProps) {
   const { pokemonInfo } = usePokemonInfo(pkmName);
 
   const pokemonType = pokemonInfo?.types[0].type.name;
@@ -15,7 +19,10 @@ function EvolutionCard({ pkmName, type }: TEvolutionCardsProps) {
   }
 
   return (
-    <S.CardContainer>
+    <S.CardContainer
+      hasMarginBottom={hasMarginBottom}
+      className="cardContainer"
+    >
       <S.ImageContainer type={pokemonType}>
         <Image
           className="pokemon-image"
@@ -26,7 +33,7 @@ function EvolutionCard({ pkmName, type }: TEvolutionCardsProps) {
         />
       </S.ImageContainer>
 
-      <S.InfoContainer type={pokemonType}>
+      <S.InfoContainer type={pokemonType} secondEvo={secondEvo}>
         <S.NameContainer>{pokemonInfo.name}</S.NameContainer>
         <PokemonType types={pokemonInfo.types} />
       </S.InfoContainer>

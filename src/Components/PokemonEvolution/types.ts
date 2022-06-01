@@ -5,6 +5,8 @@ export type TEvolutionCardsProps = {
   pkmName: string;
   key?: string;
   type: TPokemonTypes;
+  hasMarginBottom?: boolean;
+  secondEvo?: boolean;
 };
 
 export type TPokemonEvolutionProps = {
