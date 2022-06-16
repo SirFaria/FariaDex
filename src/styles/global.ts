@@ -48,10 +48,12 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: 375px) {
-    width: min(20rem, 100%);
+    width: 100%;
+    padding-inline: 1rem;
   }
 
   @media (max-width: 320px) {
-    width: min(17rem, 100%);
+    width: 100%;
+    padding-inline: 0.5rem;
   }
 `;

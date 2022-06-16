@@ -12,12 +12,15 @@ import { isPokemonEvolutions } from "~types/TPokemonEvolution";
 import { HaikeiBackground } from "../styles";
 import { Wrapper } from "src/styles/global";
 import PokedexInfo from "src/Components/PokedexInfo";
+import { MdArrowUpward } from "react-icons/md";
+import Link from "next/link";
+import PokemonDetailsPageSkeleton from "src/Components/Skeletons/PokemonDetailsPageSkeleton";
 
 export default function PokemonPage() {
   const router = useRouter();
-  const pkmName = router.query.slug;
-  const { pokemonInfo } = usePokemonInfo(pkmName as string);
-  const { pokemonSpecies } = usePokemonSpecies(pkmName as string);
+  const slug = router.query.slug;
+  const { pokemonInfo } = usePokemonInfo(slug as string);
+  const { pokemonSpecies } = usePokemonSpecies(slug as string);
 
   const evolutionUrl = pokemonSpecies?.evolution_chain.url;
   const pokedexInfo = pokemonSpecies?.flavor_text_entries;
@@ -28,11 +31,13 @@ export default function PokemonPage() {
   const isLoading =
     !pokemonInfo || !pokemonSpecies || !isPokemonEvolution || !pokedexInfo;
   if (isLoading) {
-    return null;
+    return <PokemonDetailsPageSkeleton />;
   }
 
   const firstType = pokemonInfo.types[0].type.name;
-  const dexNumber = pokemonInfo.id.toString().padStart(3, "0");
+  const pkmId = pokemonInfo.id;
+  const dexNumber = pkmId.toString().padStart(3, "0");
+  const pkmName = pokemonInfo.name;
   const pkmHeight = (pokemonInfo.height * 0.1).toFixed(1);
   const pkmWeight = (pokemonInfo.weight * 0.1).toFixed(1);
 
@@ -48,12 +53,19 @@ export default function PokemonPage() {
       <HaikeiBackground />
       <S.MainPanel>
         <Head>
-          <title>
-            {`#${dexNumber} ${toTitleCase(pokemonInfo.name)}`} | Faria Dex
-          </title>
+          <title>{`#${dexNumber} ${toTitleCase(pkmName)}`} | Faria Dex</title>
         </Head>
         <Wrapper>
           <S.PokemonDetailsContainer>
+            {pkmId !== 1 && (
+              <Link passHref href={`/pokemon/${pkmId - 1}`}>
+                <S.BackAndNextButton className="back" type={firstType}>
+                  <MdArrowUpward />
+                  <span>Previous Pokemon</span>
+                </S.BackAndNextButton>
+              </Link>
+            )}
+
             <S.LeftContainer>
               <S.NameInfo>
                 <S.ImageBox type={firstType}>
@@ -65,7 +77,7 @@ export default function PokemonPage() {
                     }
                     width={250}
                     height={250}
-                    alt={pokemonInfo.name}
+                    alt={pkmName}
                   />
                 </S.ImageBox>
 
@@ -121,6 +133,14 @@ export default function PokemonPage() {
                 />
               </S.InfoBox>
             </S.RightContainer>
+            {pkmId !== 898 && (
+              <Link passHref href={`/pokemon/${pkmId + 1}`}>
+                <S.BackAndNextButton type={firstType} className="next">
+                  <span>Next Pokemon</span>
+                  <MdArrowUpward />
+                </S.BackAndNextButton>
+              </Link>
+            )}
           </S.PokemonDetailsContainer>
         </Wrapper>
       </S.MainPanel>

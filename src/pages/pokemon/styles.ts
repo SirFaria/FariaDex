@@ -28,9 +28,21 @@ export const PokemonDetailsContainer = styled.div`
   justify-content: flex-start;
   gap: 3rem;
 
+  position: relative;
+
+  @media (max-width: 1344px) {
+    padding: 3rem 0;
+    gap: 0;
+  }
+
   @media (max-width: 1024px) {
+    padding: 2rem;
     flex-direction: column;
     gap: 2rem;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0;
   }
 `;
 
@@ -78,6 +90,101 @@ export const InfoBox = styled.div<{
 
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+`;
+
+// Buttons
+
+export const BackAndNextButton = styled.a<{ type: TPokemonTypes }>`
+  background: ${(props) => props.theme.typeColors[props.type]};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 8px;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  z-index: 5;
+  cursor: pointer;
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  span {
+    color: ${(props) => props.theme.colors.text};
+    font-size: 1.2rem;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    color: ${(props) => props.theme.colors.text};
+  }
+
+  &.back {
+    left: 0;
+    top: 10%;
+    transform: translate(-50%, -50%);
+
+    svg {
+      transform: rotate(-90deg);
+    }
+
+    @media (max-width: 1344px) {
+      transform: translate(0);
+      align-self: center;
+      margin-inline: auto;
+    }
+
+    @media (max-width: 375px) {
+      margin-top: 2rem;
+    }
+  }
+
+  &.next {
+    right: 0;
+    top: 10%;
+    transform: translate(50%, -50%);
+
+    svg {
+      transform: rotate(90deg);
+    }
+
+    @media (max-width: 1344px) {
+      transform: translate(0);
+      align-self: center;
+      margin-inline: auto;
+    }
+
+    @media (max-width: 375px) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (max-width: 1344px) {
+    position: unset;
+  }
+
+  @media (max-width: 1024px) {
+    display: flex;
+    gap: 0.5rem;
+    width: fit-content;
+    padding: 0 0.5rem;
+
+    span {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      width: min-content;
+    }
+  }
 `;
 
 // Left container

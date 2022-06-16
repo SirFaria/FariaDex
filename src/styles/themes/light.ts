@@ -17,6 +17,12 @@ export default {
     navbarBackground: "#e2e8f0af",
   },
 
+  skeletonColors: {
+    primary: "#DDD",
+    background: "#EBEBEB",
+    shimmer: "rgba(255, 255, 255, 0.2)",
+  },
+
   themeButton: {
     hoverFilter: "brightness(0.90)",
   },

@@ -20,6 +20,12 @@ declare module "styled-components" {
       navbarBackground: string;
     };
 
+    skeletonColors: {
+      primary: string;
+      background: string;
+      shimmer: string;
+    };
+
     themeButton: {
       hoverFilter: string;
     };

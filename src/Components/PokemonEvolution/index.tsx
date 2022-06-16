@@ -49,7 +49,10 @@ function PokemonEvolution({ pkmEvos, type }: TPokemonEvolutionProps) {
   function renderEvoColumn3() {
     if (pkmEvos.secondEvos.length > 0) {
       return (
-        <S.EvoColumn hasPaddingTop={pkmEvos.secondEvos.length > 1}>
+        <S.EvoColumn
+          hasPaddingTop={pkmEvos.secondEvos.length > 1}
+          isSticky={pkmEvos.secondEvos.length < 2}
+        >
           {pkmEvos.secondEvos.map((evolucao) => {
             return (
               <S.ArrowAndCardContainer key={evolucao.evo_name}>

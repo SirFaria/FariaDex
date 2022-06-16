@@ -23,9 +23,13 @@ export const PokeCardContainer = styled.ul`
   justify-content: center;
   gap: 1.5rem;
 
-  @media (max-width: 375px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     padding-block: 3rem 1.5rem;
+    width: 90%;
+  }
+
+  @media (max-width: 375px) {
     width: 100%;
   }
 
@@ -64,7 +68,7 @@ export const PokeCard = styled.li<CardLiProp>`
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 768px) {
     justify-content: center;
     padding: 1.25rem 0;
   }
@@ -72,6 +76,11 @@ export const PokeCard = styled.li<CardLiProp>`
 export const ImageBackground = styled.div`
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
+
+  @media (max-width: 768px) {
+    width: 8rem;
+    height: 8rem;
+  }
 
   @media (max-width: 375px) {
     width: 5rem;
@@ -100,7 +109,7 @@ export const CardDetails = styled.div`
     font-weight: 500;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 768px) {
     flex-direction: row;
     gap: 0;
     justify-content: space-evenly;

@@ -7,8 +7,8 @@ import { memo } from "react";
 import * as S from "../styles";
 
 import { TPokeCardProps } from "../types";
-import { PokeCardSkeleton, SkeletonDetails } from "./skeleton";
 import PokemonType from "../../PokemonType";
+import PokeCardSkeleton from "src/Components/Skeletons/PokeCardSkeleton";
 
 function PokeCard({ pkmName }: TPokeCardProps) {
   // está desestruturado, poderia ser apenas props e depois usar props.pkmName
@@ -16,16 +16,7 @@ function PokeCard({ pkmName }: TPokeCardProps) {
 
   if (!pokemonInfo) {
     // Renderizar Skeletons
-    return (
-      <PokeCardSkeleton>
-        <SkeletonDetails>
-          <Skeleton width={50} height={25} borderRadius={20} />
-          <Skeleton width={120} height={25} borderRadius={20} />
-          <Skeleton width={200} height={200} borderRadius="50%" />
-          <Skeleton width={60} height={22} borderRadius={10} />
-        </SkeletonDetails>
-      </PokeCardSkeleton>
-    );
+    return <PokeCardSkeleton />;
   }
 
   const dexNumber = pokemonInfo.id.toString().padStart(3, "0"); // Formatar os IDs em Três digitos

@@ -1,4 +1,3 @@
-import { darken } from "polished";
 import styled from "styled-components";
 import { TPokemonTypes } from "~types/TPokemonTypes";
 
@@ -58,11 +57,10 @@ export const EvoColumn = styled.div<{
     flex-direction: ${(props) => (props.isSticky ? "unset" : "row")};
     position: ${(props) => (props.isSticky ? "sticky" : "unset")};
     left: ${(props) => (props.isSticky ? "0px" : "unset")};
-    justify-content: center;
+    justify-content: ${(props) => (props.isSticky ? "center" : "flex-start")};
   }
 
   @media (max-width: 375px) {
-    justify-content: flex-start;
     .arrow {
       margin-right: ${(props) => (props.isSticky ? "unset" : "1.5rem")};
     }
@@ -101,6 +99,10 @@ export const CardContainer = styled.div<{ hasMarginBottom?: boolean }>`
   gap: 1.5rem;
 
   ${(props) => (props.hasMarginBottom ? "margin-bottom: 1.5rem;" : "")}
+
+  @media (max-width: 600px) {
+    width: 12.5rem;
+  }
 
   @media (max-width: 375px) {
     ${(props) => (props.hasMarginBottom ? "margin-right: 1.5rem;" : "")}
