@@ -22,8 +22,9 @@ function EvolutionCard({
     <S.CardContainer
       hasMarginBottom={hasMarginBottom}
       className="cardContainer"
+      href={`/pokemon/${pokemonInfo.name}`}
     >
-      <S.ImageContainer type={pokemonType}>
+      <S.ImageContainer type={pokemonType} className="hover">
         <Image
           className="pokemon-image"
           src={pokemonInfo.sprites.other["official-artwork"].front_default}
@@ -33,7 +34,11 @@ function EvolutionCard({
         />
       </S.ImageContainer>
 
-      <S.InfoContainer type={pokemonType} secondEvo={secondEvo}>
+      <S.InfoContainer
+        type={pokemonType}
+        secondEvo={secondEvo}
+        className="hover"
+      >
         <S.NameContainer>{pokemonInfo.name}</S.NameContainer>
         <PokemonType types={pokemonInfo.types} />
       </S.InfoContainer>

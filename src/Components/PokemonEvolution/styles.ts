@@ -92,13 +92,24 @@ export const ArrowAndCardContainer = styled.div`
 
 // Evolution Card
 
-export const CardContainer = styled.div<{ hasMarginBottom?: boolean }>`
+export const CardContainer = styled.a<{ hasMarginBottom?: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1.5rem;
 
   ${(props) => (props.hasMarginBottom ? "margin-bottom: 1.5rem;" : "")}
+
+  div.hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  &:hover {
+    div.hover {
+      transform: scale(1.02) translateY(-5px);
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    }
+  }
 
   @media (max-width: 600px) {
     width: 12.5rem;
