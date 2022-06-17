@@ -1,6 +1,7 @@
 import { useDebouncedValue } from "@mantine/hooks";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 import { MdOutlineDarkMode, MdOutlineWbSunny, MdSearch } from "react-icons/md";
@@ -9,6 +10,8 @@ import { useSearch } from "../../contexts/searchContext";
 import * as S from "./styles";
 
 function Navbar({ toggleTheme, theme }: any) {
+  const router = useRouter();
+  const route = router.route;
   const { setSearchValue } = useSearch();
 
   const [value, setValue] = useState("");
@@ -24,6 +27,24 @@ function Navbar({ toggleTheme, theme }: any) {
     setMenuExpanded(!menuExpanded);
   }
 
+  function showSearchbar() {
+    if (route === "/") {
+      return (
+        <S.SearchContainer>
+          <MdSearch />
+
+          <S.SearchInput
+            type="text"
+            onChange={(e) => setValue(e.target.value)}
+            value={value}
+            placeholder="Search any Pokémon"
+          ></S.SearchInput>
+        </S.SearchContainer>
+      );
+    }
+    return;
+  }
+
   return (
     <S.NavbarContainer>
       <Wrapper id="navbarWrapper">
@@ -37,22 +58,13 @@ function Navbar({ toggleTheme, theme }: any) {
           </a>
         </Link>
         <S.Menu isActive={menuExpanded}>
-          <S.SearchContainer>
-            <MdSearch />
-
-            <S.SearchInput
-              type="text"
-              onChange={(e) => setValue(e.target.value)}
-              value={value}
-              placeholder="Search any Pokémon"
-            ></S.SearchInput>
-          </S.SearchContainer>
+          {showSearchbar()}
 
           <S.ThemeButton
             type="button"
             onClick={() => {
               toggleTheme();
-              setMenuExpanded(!menuExpanded);
+              setMenuExpanded(false);
             }}
           >
             {theme.title === "light" ? (
