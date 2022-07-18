@@ -9,12 +9,12 @@ import usePokemonInfo from "../../hooks/SWR/usePokemonInfo";
 import usePokemonSpecies from "../../hooks/SWR/usePokemonSpecies";
 import * as S from "./styles";
 import { isPokemonEvolutions } from "~types/TPokemonEvolution";
-import { HaikeiBackground } from "../styles";
 import { Wrapper } from "src/styles/global";
 import PokedexInfo from "src/Components/PokedexInfo";
 import { MdArrowUpward } from "react-icons/md";
 import Link from "next/link";
 import PokemonDetailsPageSkeleton from "src/Components/Skeletons/PokemonDetailsPageSkeleton";
+import { HaikeiBackground } from "../home.styles";
 
 export default function PokemonPage() {
   const router = useRouter();

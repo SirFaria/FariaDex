@@ -1,5 +1,5 @@
+import { HaikeiBackground } from "src/pages/home.styles";
 import { MainPanel } from "src/pages/pokemon/styles";
-import { HaikeiBackground } from "src/pages/styles";
 import { Wrapper } from "src/styles/global";
 import Shimmer from "../Shimmer";
 import * as S from "./styles";

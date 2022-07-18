@@ -2,6 +2,7 @@ import styled, { createGlobalStyle } from "styled-components";
 
 export const navHeight = 4.5;
 export const contentPadding = 5;
+export const wrapperWidth = "min(81rem, 100%)";
 
 export default createGlobalStyle`
 
@@ -28,6 +29,10 @@ export default createGlobalStyle`
     font-family: 'Ubuntu', sans-serif;
     -webkit-font-smoothing: antialiased !important;
     font-weight: 300;
+
+    button {
+      font-family: 'Ubuntu', sans-serif;
+    }
   }
 `;
 

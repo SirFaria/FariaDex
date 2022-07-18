@@ -1,32 +1,37 @@
-import axios from "axios";
+import { GetStaticProps } from "next";
 import Head from "next/head";
-import { useState } from "react";
-import useSWR from "swr";
-import CardSection from "../Components/CardSection";
-import * as S from "./styles";
-import { TPokemonData } from "~types/TPokemon";
-import { BackToTopButton } from "src/Components/BackToTopButton";
-
-const fetcher = (url: string) => axios.get(url).then((res) => res.data);
+import Image from "next/image";
+import Link from "next/link";
+import { Wrapper } from "src/styles/global";
+import * as S from "./home.styles";
 
 export default function Home() {
-  const { data: pokemonApiResponse } = useSWR<TPokemonData>(
-    "https://pokeapi.co/api/v2/pokemon?offset=0&limit=151",
-    fetcher
-  );
-
-  if (!pokemonApiResponse) {
-    return null;
-  }
-
   return (
-    <S.Homepage>
+    <>
       <Head>
         <title>Faria Dex</title>
       </Head>
-      <BackToTopButton />
+      <Wrapper>
+        <S.Homepage>
+          <section>
+            <span>
+              Welcome to <strong>FariaDex</strong>
+            </span>
+            <h1>
+              A simple pokedex containing the <br />
+              first <span>151</span> pokémon
+            </h1>
+            <p>Coming soon the next generations.</p>
+            <Link href="/gen1" passHref>
+              <button>Get started</button>
+            </Link>
+          </section>
+          <S.PikachuImage>
+            <Image src="/pikachu.svg" alt="Pikachu" layout="fill" />
+          </S.PikachuImage>
+        </S.Homepage>
+      </Wrapper>
       <S.HaikeiBackground />
-      <CardSection pkmList={pokemonApiResponse.results} />
-    </S.Homepage>
+    </>
   );
 }

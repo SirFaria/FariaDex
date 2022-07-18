@@ -28,7 +28,7 @@ function Navbar({ toggleTheme, theme }: any) {
   }
 
   function showSearchbar() {
-    if (route === "/") {
+    if (route === "/gen1") {
       return (
         <S.SearchContainer>
           <MdSearch />
