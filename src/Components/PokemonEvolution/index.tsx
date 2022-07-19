@@ -75,7 +75,7 @@ function PokemonEvolution({ pkmEvos, type }: TPokemonEvolutionProps) {
 
   if (pkmEvos.hasEvo) {
     return (
-      <S.EvolutionContainer>
+      <S.EvolutionContainer type={type}>
         {renderEvoColumn1()}
         {renderEvoColumn2()}
         {renderEvoColumn3()}
@@ -83,7 +83,7 @@ function PokemonEvolution({ pkmEvos, type }: TPokemonEvolutionProps) {
     );
   }
 
-  return <S.EvolutionContainer>Sem evoluções</S.EvolutionContainer>;
+  return <S.EvolutionContainer type={type}>Sem evoluções</S.EvolutionContainer>;
 }
 
 export default PokemonEvolution;

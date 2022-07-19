@@ -33,6 +33,22 @@ export default createGlobalStyle`
     button {
       font-family: 'Ubuntu', sans-serif;
     }
+
+  &::-webkit-scrollbar {
+    width: 0.7rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: ${(props) => props.theme.colors.secondary};
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: ${(props) => props.theme.colors.primary};
+  }
+  
+    &::-webkit-scrollbar-thumb:hover {
+    background: ${(props) => props.theme.colors.primaryI};
+  }
   }
 `;
 

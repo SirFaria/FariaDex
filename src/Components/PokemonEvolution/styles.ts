@@ -1,9 +1,10 @@
+import { darken, lighten } from "polished";
 import styled from "styled-components";
 import { TPokemonTypes } from "~types/TPokemonTypes";
 
 // Evolution Container
 
-export const EvolutionContainer = styled.div`
+export const EvolutionContainer = styled.div<{ type: TPokemonTypes }>`
   display: flex;
   justify-content: center;
   gap: 1.5rem;
@@ -13,6 +14,22 @@ export const EvolutionContainer = styled.div`
   max-height: 21.625rem;
 
   overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: ${(props) => props.theme.colors.secondaryLight};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${(props) => props.theme.typeColors[props.type]};
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: ${(props) => lighten(0.1, props.theme.typeColors[props.type])};
+  }
 
   @media (max-width: 768px) {
     gap: 1rem;
