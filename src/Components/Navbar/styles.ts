@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { darken } from "polished";
 import { navHeight } from "src/styles/global";
 
 export const NavbarContainer = styled.nav`
@@ -39,19 +38,34 @@ export const NavbarContainer = styled.nav`
   }
 `;
 
-// export const NavbarWrapper = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
+export const ReturnButton = styled.button`
+  background: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.navbarText};
+  height: 2.375rem;
+  padding-inline: 0.5rem;
+  border: none;
+  border-radius: 6px;
 
-//   width: 100%;
-// `;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 
-// export const SearchAndThemeContainer = styled.div`
-//   display: flex;
-//   align-items: center;
-//   gap: 1rem;
-// `;
+  font-size: 1rem;
+  font-weight: 500;
+
+  transition: filter 0.2s;
+  cursor: pointer;
+
+  svg {
+    color: ${(props) => props.theme.colors.navbarText};
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+`;
 
 export const SearchContainer = styled.div`
   background: ${(props) => props.theme.colors.primary};

@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 import { MdOutlineDarkMode, MdOutlineWbSunny, MdSearch } from "react-icons/md";
+import { IoIosReturnLeft } from "react-icons/io";
 import { Wrapper } from "src/styles/global";
 import { useSearch } from "../../contexts/searchContext";
 import * as S from "./styles";
@@ -25,6 +26,20 @@ function Navbar({ toggleTheme, theme }: any) {
 
   function toggleMenu() {
     setMenuExpanded(!menuExpanded);
+  }
+
+  function showReturnButton() {
+    if (route === "/pokemon/[slug]") {
+      return (
+        <Link href="/gen1" passHref>
+          <S.ReturnButton>
+            <IoIosReturnLeft />
+            Return back
+          </S.ReturnButton>
+        </Link>
+      );
+    }
+    return;
   }
 
   function showSearchbar() {
@@ -59,6 +74,8 @@ function Navbar({ toggleTheme, theme }: any) {
         </Link>
         <S.Menu isActive={menuExpanded}>
           {showSearchbar()}
+
+          {showReturnButton()}
 
           <S.ThemeButton
             type="button"
