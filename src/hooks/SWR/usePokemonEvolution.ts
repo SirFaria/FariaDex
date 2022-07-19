@@ -1,5 +1,5 @@
 import axios from "axios";
-import useSWR from "swr";
+import useSWRImmutable from "swr";
 import { IApiResponse, TPokemonEvolutions } from "~types/TPokemonEvolution";
 
 const fetcher = (url: string) => axios.get(url).then((res) => res.data);
@@ -41,7 +41,7 @@ function getEvolutions(evolutionChain: IApiResponse): TPokemonEvolutions {
 }
 
 export default function usePokemonEvolution(url: string) {
-  const { data, error } = useSWR<IApiResponse>(url, fetcher);
+  const { data, error } = useSWRImmutable<IApiResponse>(url, fetcher);
 
   const pokemonEvolutions: TPokemonEvolutions | {} = data
     ? getEvolutions(data)
