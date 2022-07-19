@@ -27,7 +27,7 @@ export default function Home() {
             </Link>
           </section>
           <S.PikachuImage>
-            <Image src="/pikachu.svg" alt="Pikachu" layout="fill" />
+            <Image src="/pikachu.svg" alt="Pikachu" layout="fill" priority />
           </S.PikachuImage>
         </S.Homepage>
       </Wrapper>

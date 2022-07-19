@@ -17,11 +17,11 @@ export const HaikeiBackground = styled.div`
 `;
 
 export const Homepage = styled.main`
-  padding-top: ${navHeight + 9}rem;
+  padding-top: ${navHeight + 4}rem;
   width: 100%;
 
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
 
   section {
@@ -87,6 +87,6 @@ export const Homepage = styled.main`
 
 export const PikachuImage = styled.div`
   position: relative;
-  width: 40%;
-  height: 200%;
+  width: 550px;
+  height: 550px;
 `;
