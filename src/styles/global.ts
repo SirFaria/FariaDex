@@ -56,16 +56,16 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
 
-  width: min(81rem, 100%);
+  width: min(81rem, 95%);
 
   margin-inline: auto;
 
   @media (max-width: 1024px) {
-    width: min(50rem, 100%);
+    width: min(56rem, 95%);
   }
 
   @media (max-width: 768px) {
-    width: min(40rem, 100%);
+    width: min(40rem, 95%);
   }
 
   @media (max-width: 375px) {
