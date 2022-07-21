@@ -1,39 +1,50 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
-  title: 'dark',
+  title: "dark",
 
   colors: {
-    primary: '#9E363E',
-    secondary: '#333333',
+    primary: "#FC8181",
+    primaryI: "#C53030",
 
-    primaryI: '#cc494c',
+    secondary: "#1A202C",
+    secondaryLight: "#2D3748",
 
-    background: '#292929',
-    text: '#F7F7F7',
+    background: "#292929",
+    text: "#1A202C",
+    textSecondary: "#EDF2F7",
+
+    navbarText: "rgba(0, 0, 0, 0.4)",
+    navbarBackground: "#171923af",
+  },
+
+  skeletonColors: {
+    primary: "#777",
+    background: "#444",
+    shimmer: "rgba(255, 255, 255, 0.05)",
   },
 
   themeButton: {
-    hoverFilter: 'brightness(0.90)' 
+    hoverFilter: "brightness(0.90)",
   },
 
   typeColors: {
-    normal: '#BABABA',
-    fighting: '#FC9C7C',
-    flying: '#add5ff',
-    poison: '#ab92bf',
-    ground: '#DBAF74',
-    rock: '#C4C19B',
-    bug: '#B8BA72',
-    ghost: '#AA6CAD',
-    steel: '#B7B7C9',
-    fire: '#FC9090',
-    water: '#7EC0DE',
-    grass: '#78C27E',
-    electric: '#CFBC46',
-    psychic: '#FF99AC',
-    ice: '#A1CFCC',
-    dragon: '#818DE3',
-    dark: '#635858',
-    fairy: '#E3ACE3',
+    normal: "#DBDBDB",
+    fighting: "#F6AD55",
+    flying: "#B5DFFB",
+    poison: "#D7C8EB",
+    ground: "#EEC88F",
+    rock: "#F4DBBA",
+    bug: "#DFF18B",
+    ghost: "#D6BCFA",
+    steel: "#CBD5E0",
+    fire: "#FC8181",
+    water: "#90CDF4",
+    grass: "#9AE6B4",
+    electric: "#FAF089",
+    psychic: "#FED7E2",
+    ice: "#C4F1F9",
+    dragon: "#AB99E8",
+    dark: "#718096",
+    fairy: "#FEB6D3",
   },
 };
