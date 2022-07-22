@@ -1,4 +1,7 @@
-<h1 align="center">FariaDex</h1>
+<h1 align="center">
+    <img alt="FariaDex" title="FariaDex" src="./public/favicon.svg" width="40px"  />
+    FariaDex
+</h1>
 
 <h1 align="center">
     <img alt="FariaDex Homepage" title="FariaDex Homepage" src="./fariadex-homepage.png" width="600px"  />
